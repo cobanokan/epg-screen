@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+.schedules {
+    display: flex;
+    background-color: $color-dark-gray;
+
+    .schedule {
+        display: flex;
+        flex-direction: column;
+        padding: 0.3rem;
+        overflow: hidden;
+        width: calc(var(--duration) * var(--one-milisecond-length));
+        max-height: var(--channel-logo-size);
+        border-right: 1px solid $color-lighter-gray;
+        text-decoration: none;
+
+        &.on {
+          background-color: $color-light-gray;
+        }
+  
+        & span {
+          color: $color-white;
+          word-wrap: break-word;
+          hyphens: auto;
+  
+          &:last-child {
+            color: $color-lighter-gray;
+            font-size: 80%;
+          }
+        }
+  
+        &:focus,
+        &:active {
+          & span {
+            color: $color-yellow;
+          }
+        }
+        
+    }
+}

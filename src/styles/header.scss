@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+header {
+    display: grid;
+    grid-template-columns: 3rem 1fr 3rem;
+
+    .icon-container {
+        padding: 0.8rem;
+    }
+
+    .logo-container {
+        padding: 0.4rem;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+        }
+    }
+}

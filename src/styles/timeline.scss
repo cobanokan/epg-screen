@@ -1,0 +1,37 @@
+@import './variables.scss';
+
+.timeline {
+    background-color: $color-gray;
+    padding-left: var(--channel-logo-size);
+    display: flex;
+    border-bottom: 1px solid $color-lighter-gray;
+    border-top: 1px solid $color-lighter-gray;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+
+    .hour {
+        width: calc(var(--one-milisecond-length) * 1000 * 3600);
+
+        
+        span {
+            display: block;
+            height: 2.6rem;
+            width: 6rem;
+            transform: translateX(-3rem);
+            text-align: center;
+            padding-top: 0.4rem;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 1px;
+                background-color: $color-lighter-gray;
+                height: 0.8rem;
+            }
+        }
+    }
+}

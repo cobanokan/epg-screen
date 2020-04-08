@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: calc(1.5vmin + 10px);
+  line-height: 1.2;
+  color: $color-white;
+
+  --one-milisecond-length: calc(1rem / 180000);
+  --channel-logo-size: 6rem;
+
+  @media (max-width: 500px) {
+      --one-milisecond-length: calc(1rem / 200000);
+      --channel-logo-size: 4.5rem;    
+  }
+    
+}
+
+#app {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 3rem var(--channel-logo-size) 1fr 3rem;
+  background-color: $color-black;
+}
+
+.error {
+  color: $color-red;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.loading {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid $color-white;
+  border-top: 0.5rem solid $color-gray;
+  box-shadow: 0 0 1px $color-white;
+  margin: 5rem calc(50vw - 1.5rem);
+  opacity: .75;
+
+  animation: rotate 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+.epg-container {
+  overflow: auto;
+}
+
+.epg {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    width: calc(var(--one-milisecond-length) * 1000 * 60 * 60 * 24 + var(--channel-logo-size));
+
+    .now-button {
+        position: fixed;
+        width: 4rem;
+        height: 2rem;
+        bottom: 4rem;
+        right: 1rem;
+        background-color: $color-yellow;
+        color: $color-white;
+        border: $color-yellow;
+        border-radius: 0.3rem;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+
+  .now-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.1rem;
+    background-color: $color-yellow;
+    height: 100%;
+    z-index: 40;
+    transform: translateX(calc(var(--now) * var(--one-milisecond-length) + var(--channel-logo-size)));
+
+    &::after {
+      content: "";
+      display: block;
+      position: sticky;
+      top: 0;
+      width: 0.3rem;
+      background-color: $color-yellow;
+      height: 2.6rem;
+      border-radius: 15%;
+      transform: translateX(-0.1rem);
+    }
+  }
+}
